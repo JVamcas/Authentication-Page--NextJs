@@ -10,6 +10,6 @@
         @apply focus:outline-none text-white bg-blue-500 font-semibold hover:opacity-80 rounded-sm md:px-4 p-2 py-1
     }
     .form-error{
-        @apply md:text-sm text-xs text-red-500
+        @apply text-xs text-red-500
     }
 }
