@@ -23,14 +23,17 @@ export default function Home() {
     }
     const loginLayout = <form onSubmit={handleSubmit(login)}
                               method={'post'}
-                              className="md:w-3/5 w-full flex flex-col space-y-3">
+                              className="md:w-3/5 w-full flex flex-col">
+        <span className={"flex flex-col space-y-0 mb-3"}>
         {errors.email && <span className="form-error">Enter a valid email.</span>}
-        <input {...register('email', {required: true, pattern: /^\S+@\S+$/i})}
-               className="bp3-input bp3-intent-primary bp3-large" placeholder={'Email address'} dir={'auto'}
-               type={'email'}
-        />
+            <input {...register('email', {required: true, pattern: /^\S+@\S+$/i})}
+                   className="bp3-input bp3-intent-primary bp3-large" placeholder={'Email address'} dir={'auto'}
+                   type={'email'}
+            />
+        </span>
+
         {errors.password && <span className="form-error">Password is required.</span>}
-        <div className="relative">
+        <div className="relative flex flex-col my-0 bg-yellow-500">
             <input
                 {...register('password', {required: true})}
                 className="relative w-full bp3-input bp3-intent-primary bp3-large"
@@ -45,17 +48,17 @@ export default function Home() {
                         </span>
         </div>
         <LoadingButton
-            class={"bp3-button bp3-large font-bold focus:outline-none"}
-            text={"Sign In"}
+            class={"bp3-button bp3-large font-bold focus:outline-none my-3"}
+            text={"Login"}
             showLoad={showLoad}
         />
         <Link
             href={"/create_account"}>
             <a
-                className={"bp3-button bp3-large font-bold focus:outline-none"}
+                className={"bp3-button bp3-large font-bold focus:outline-none mb-3"}
                 style={{color: Colors.WHITE, background: Colors.BLUE1}}
                 type={'button'}>
-                Sign Up
+                Create new account
             </a>
         </Link>
         <div style={{color: Colors.BLUE1}}
@@ -65,12 +68,12 @@ export default function Home() {
                       onChange={onRememberMe}>
                 <Icon className="ml-1" icon={'user'}/>
             </Checkbox>
-            <Link href={"/reset_password"}>
-                <a className={'text-red-400'}>Reset password?</a>
+            <Link href={"/forgot_password"}>
+                <a className={'text-red-400'}>Forgot password?</a>
             </Link>
         </div>
     </form>
 
-    return <AuthLayout children={loginLayout}/>
+return <AuthLayout children={loginLayout}/>
 
 }

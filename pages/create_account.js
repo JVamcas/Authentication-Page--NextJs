@@ -66,7 +66,7 @@ const CreateAccount = props => {
         </form>
         <Link href={"/"}>
             <a
-                className={"font-semibold italic"}
+                className={"font-semibold italic md:text-sm text-xs"}
                 style={{color: Colors.BLUE3}}
             >Already have an account? Login</a>
         </Link>
