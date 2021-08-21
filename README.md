@@ -1,6 +1,8 @@
 
 ## Building an Authentication page
 
+![Alt text](Capture.PNG?raw=true "Login")
+
 #### Description
 
 This is an attempt to build and demonstrate a webapp:
